@@ -86,7 +86,7 @@ function initials(name: string) {
   return name.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase()
 }
 
-function Cursor() {
+function _Cursor() {
   return <span className="inline-block w-0.5 h-3.5 bg-current ml-0.5 animate-pulse align-middle" />
 }
 
@@ -506,24 +506,24 @@ export default function DemoPage() {
                       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                         {careResult && (
                           <>
-                            {careResult.urgentFlags?.length > 0 && (
+                            {(careResult.urgentFlags?.length ?? 0) > 0 && (
                               <div className="rounded-xl bg-red-50 border border-red-200 p-4">
                                 <p className="text-xs font-semibold text-red-600 mb-1">⚠️ Urgent Flags</p>
-                                <p className="text-2xl font-bold text-red-700">{careResult.urgentFlags.length}</p>
+                                <p className="text-2xl font-bold text-red-700">{careResult.urgentFlags?.length ?? 0}</p>
                                 <p className="text-xs text-red-500 mt-0.5">needs immediate attention</p>
                               </div>
                             )}
-                            {careResult.medicationInteractions?.length > 0 && (
+                            {(careResult.medicationInteractions?.length ?? 0) > 0 && (
                               <div className="rounded-xl bg-orange-50 border border-orange-200 p-4">
                                 <p className="text-xs font-semibold text-orange-600 mb-1">💊 Med Interactions</p>
-                                <p className="text-2xl font-bold text-orange-700">{careResult.medicationInteractions.length}</p>
+                                <p className="text-2xl font-bold text-orange-700">{careResult.medicationInteractions?.length ?? 0}</p>
                                 <p className="text-xs text-orange-500 mt-0.5">potential interactions</p>
                               </div>
                             )}
-                            {careResult.followUpActions?.length > 0 && (
+                            {(careResult.followUpActions?.length ?? 0) > 0 && (
                               <div className={`rounded-xl border p-4 ${c.card}`}>
                                 <p className={`text-xs font-semibold mb-1 ${c.streamText}`}>📋 Follow-up Actions</p>
-                                <p className={`text-2xl font-bold ${c.streamText}`}>{careResult.followUpActions.length}</p>
+                                <p className={`text-2xl font-bold ${c.streamText}`}>{careResult.followUpActions?.length ?? 0}</p>
                                 <p className={`text-xs mt-0.5 opacity-70 ${c.streamText}`}>recommended next steps</p>
                               </div>
                             )}

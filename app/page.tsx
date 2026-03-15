@@ -1,6 +1,7 @@
 import Link from "next/link"
 import {
   ArrowRight,
+  ChevronRight,
   Heart,
   FileText,
   Shield,
