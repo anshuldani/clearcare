@@ -1,101 +1,267 @@
-import Image from "next/image";
+import Link from "next/link"
+import {
+  ArrowRight,
+  Heart,
+  FileText,
+  Shield,
+  Zap,
+  Users,
+  DollarSign,
+  AlertCircle,
+  CheckCircle,
+  Clock,
+  Phone,
+} from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-[#FAFAF8]">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* ── HERO ───────────────────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-4 pt-16 pb-12 text-center">
+        <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-2 mb-6">
+          <div className="w-2 h-2 rounded-full bg-teal-600 animate-pulse" />
+          <span className="text-sm font-medium text-teal-700">Built for Google DeepMind Hackathon 2026</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-5 leading-tight tracking-tight">
+          Your family deserves
+          <br />
+          <span className="text-teal-700">clarity.</span> Not confusion.
+        </h1>
+
+        <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
+          63 million Americans are caring for a loved one right now — navigating discharge papers, decoding insurance,
+          and fighting medical bills completely alone. ClearCare changes that.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
+          <Link
+            href="/demo"
+            className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-base"
+          >
+            <Zap className="h-4 w-4" />
+            See Live Demo
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link
+            href="/care"
+            className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-teal-400 text-gray-700 hover:text-teal-700 font-semibold px-6 py-3 rounded-xl transition-colors text-base"
+          >
+            Start for Free
+          </Link>
+        </div>
+
+        {/* Trust strip */}
+        <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
+          <span className="flex items-center gap-1.5"><Shield className="h-3.5 w-3.5 text-teal-600" /> No account needed</span>
+          <span className="text-gray-200">·</span>
+          <span>No data stored</span>
+          <span className="text-gray-200">·</span>
+          <span>Free to use</span>
+          <span className="text-gray-200">·</span>
+          <span>Private & secure</span>
+        </div>
+      </section>
+
+      {/* ── STATS ──────────────────────────────────────────────── */}
+      <section className="bg-white border-y border-gray-100 py-10">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="grid grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <Users className="h-5 w-5 text-teal-600" />
+                <span className="text-3xl font-bold text-gray-900">63M</span>
+              </div>
+              <p className="text-sm text-gray-500">unpaid family caregivers in the US</p>
+            </div>
+            <div>
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <AlertCircle className="h-5 w-5 text-red-500" />
+                <span className="text-3xl font-bold text-gray-900">80%</span>
+              </div>
+              <p className="text-sm text-gray-500">of medical bills contain errors</p>
+            </div>
+            <div>
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <DollarSign className="h-5 w-5 text-amber-600" />
+                <span className="text-3xl font-bold text-gray-900">$1,300</span>
+              </div>
+              <p className="text-sm text-gray-500">average overcharge per hospital stay</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TWO TOOLS ──────────────────────────────────────────── */}
+      <section className="max-w-5xl mx-auto px-4 py-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Two tools. One mission.</h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Whether you&apos;re staring at a confusing discharge paper or a $15,000 hospital bill —
+            ClearCare speaks your language.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Care Companion */}
+          <Link href="/care" className="group">
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 h-full hover:shadow-lg hover:border-teal-200 transition-all duration-200 group-hover:-translate-y-0.5">
+              <div className="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center mb-5">
+                <Heart className="h-6 w-6 text-teal-700" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Care Companion</h3>
+              <p className="text-gray-500 leading-relaxed mb-5">
+                Upload or paste a hospital discharge summary. Get plain English answers: what happened, what to
+                watch for, medication warnings, and exactly when to call 911 — personalized to your loved one.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["Discharge summaries", "Medication safety", "Red flag symptoms", "Follow-up checklist"].map((tag) => (
+                  <span key={tag} className="text-xs bg-teal-50 text-teal-700 border border-teal-200 rounded-full px-2.5 py-1">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center gap-2 text-teal-700 font-semibold text-sm group-hover:gap-3 transition-all">
+                Decode a discharge summary
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
+
+          {/* Bill Guardian */}
+          <Link href="/bill" className="group">
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 h-full hover:shadow-lg hover:border-amber-200 transition-all duration-200 group-hover:-translate-y-0.5">
+              <div className="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-5">
+                <FileText className="h-6 w-6 text-amber-700" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Bill Guardian</h3>
+              <p className="text-gray-500 leading-relaxed mb-5">
+                Upload or paste your medical bill. ClearCare analyzes every line item, flags overbilling, explains
+                what your insurance should cover, and writes your dispute letter — ready to send certified mail.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["CPT code analysis", "Overbilling detection", "Insurance coverage", "Dispute letters"].map((tag) => (
+                  <span key={tag} className="text-xs bg-amber-50 text-amber-700 border border-amber-200 rounded-full px-2.5 py-1">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center gap-2 text-amber-700 font-semibold text-sm group-hover:gap-3 transition-all">
+                Analyze my medical bill
+                <ArrowRight className="h-4 w-4" />
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ───────────────────────────────────────── */}
+      <section className="bg-white border-y border-gray-100 py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-10">How it works</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Users className="h-5 w-5 text-teal-700" />,
+                step: "1",
+                title: "Tell us about the patient",
+                desc: "Name, age, conditions, medications, and insurance. Takes 60 seconds. Saved for next time.",
+              },
+              {
+                icon: <FileText className="h-5 w-5 text-teal-700" />,
+                step: "2",
+                title: "Upload or paste the document",
+                desc: "Drop in a photo of the discharge paper or bill, or paste the text. Gemini reads it instantly.",
+              },
+              {
+                icon: <CheckCircle className="h-5 w-5 text-teal-700" />,
+                step: "3",
+                title: "Get your action plan",
+                desc: "Plain English summary, red flags, medication warnings, and next steps — or a ready-to-send dispute letter.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-10 h-10 rounded-full bg-teal-700 text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── POWERED BY ─────────────────────────────────────────── */}
+      <section className="max-w-4xl mx-auto px-4 py-14 text-center">
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
+          Powered by Google DeepMind
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+          <div className="flex items-center gap-2 bg-teal-50 border border-teal-200 rounded-full px-4 py-2">
+            <div className="w-2 h-2 rounded-full bg-teal-600" />
+            <span className="text-sm font-semibold text-teal-800 font-mono">gemini-2.5-flash-lite</span>
+            <span className="text-xs text-teal-600">Care · Bills · Documents · Letters</span>
+          </div>
+        </div>
+        <p className="text-sm text-gray-400 max-w-lg mx-auto">
+          Real-time multimodal AI analyzes your documents in seconds —
+          the same foundation models powering the next generation of healthcare AI.
+        </p>
+      </section>
+
+      {/* ── WHAT YOU GET ───────────────────────────────────────── */}
+      <section className="bg-white border-y border-gray-100 py-14">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-10">What ClearCare gives you</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { icon: <Phone className="h-4 w-4 text-red-600" />, title: "When to call 911", desc: "Specific symptom thresholds for your loved one's exact conditions.", color: "border-red-100 bg-red-50/30" },
+              { icon: <Heart className="h-4 w-4 text-teal-600" />, title: "Medication safety", desc: "Interactions, timing, and emergency signs for every drug on the list.", color: "border-teal-100 bg-teal-50/30" },
+              { icon: <CheckCircle className="h-4 w-4 text-green-600" />, title: "Follow-up checklist", desc: "Daily action items you can check off — saved across sessions.", color: "border-green-100 bg-green-50/30" },
+              { icon: <DollarSign className="h-4 w-4 text-amber-600" />, title: "Overbilling detection", desc: "CPT codes cross-checked against Medicare allowed rates.", color: "border-amber-100 bg-amber-50/30" },
+              { icon: <FileText className="h-4 w-4 text-blue-600" />, title: "Dispute letter", desc: "Formal letter citing Illinois law, ready to send by certified mail.", color: "border-blue-100 bg-blue-50/30" },
+              { icon: <Clock className="h-4 w-4 text-purple-600" />, title: "Seconds, not hours", desc: "Full analysis streams in real-time. No waiting. No refreshing.", color: "border-purple-100 bg-purple-50/30" },
+            ].map((item) => (
+              <div key={item.title} className={`rounded-xl border p-4 ${item.color}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  {item.icon}
+                  <span className="text-sm font-semibold text-gray-900">{item.title}</span>
+                </div>
+                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FINAL CTA ──────────────────────────────────────────── */}
+      <section className="bg-teal-700 py-16">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Start with the live demo</h2>
+          <p className="text-teal-100 text-lg mb-8 max-w-xl mx-auto">
+            Watch ClearCare analyze a real hospital discharge and itemized bill —
+            no sign-up, no typing, results in seconds.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/demo"
+              className="inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-8 py-3.5 rounded-xl hover:bg-teal-50 transition-colors text-base"
+            >
+              <Zap className="h-4 w-4" />
+              Launch Live Demo
+            </Link>
+            <Link
+              href="/care"
+              className="inline-flex items-center gap-2 bg-teal-600 border border-teal-500 text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-teal-500 transition-colors text-base"
+            >
+              Analyze my document
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
