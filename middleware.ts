@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
   // Guard: if calling the API and GEMINI_API_KEY is not set, return a clear 503
   // rather than a cryptic Gemini error. This protects against misconfigured deploys.
   if (API_ROUTES.test(request.nextUrl.pathname)) {
-    if (!process.env.GEMINI_API_KEY && !process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    if (!process.env.GOOGLE_API_KEY && !process.env.GEMINI_API_KEY && !process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
       return new NextResponse(
         JSON.stringify({
           error: "Service not configured. Please set GEMINI_API_KEY in your environment.",
