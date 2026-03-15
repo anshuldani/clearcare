@@ -17,6 +17,20 @@ const config: Config = {
         "success-green": "#15803D",
         "warning-red": "#C2410C",
       },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in-from-top-2": {
+          "0%": { opacity: "0", transform: "translateY(-8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "fade-in": "fade-in 0.4s ease-out",
+        "slide-in-from-top-2": "slide-in-from-top-2 0.3s ease-out",
+      },
     },
   },
   plugins: [],
