@@ -236,6 +236,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FAQ ────────────────────────────────────────────────── */}
+      <section className="max-w-3xl mx-auto px-4 py-16">
+        <h2 className="text-2xl font-bold text-gray-900 text-center mb-10">Common questions</h2>
+        <div className="space-y-4">
+          {[
+            {
+              q: "Is my loved one's information private?",
+              a: "Yes. ClearCare processes your documents in real time using the Gemini API and never stores patient data on our servers. No account is required. Your information stays with you.",
+            },
+            {
+              q: "Can I use this for any hospital or insurance company?",
+              a: "Yes. ClearCare works with any hospital discharge summary or itemized bill regardless of which hospital or insurer issued it. For bill analysis, it cross-checks charges against Medicare allowed rates — a standard benchmark for detecting overbilling nationwide.",
+            },
+            {
+              q: "What if I don't have a digital copy of the document?",
+              a: "Take a photo with your phone. ClearCare uses Gemini's vision capabilities to read text from photos of discharge papers, bills, or prescription printouts.",
+            },
+            {
+              q: "Is the analysis medically accurate? Can I trust it?",
+              a: "ClearCare is built on Gemini 2.5 Flash Lite with a curated medical knowledge base for medication warnings, CPT codes, and condition-specific protocols. It is designed to be a knowledgeable second set of eyes — not a replacement for your care team. Always confirm important decisions with a licensed provider.",
+            },
+            {
+              q: "What does the dispute letter actually do?",
+              a: "The generated letter formally disputes overbilled or unexplained charges citing the specific line items identified in your bill. You print it, send it via certified mail to the hospital billing department, and the hospital is legally required to respond. Many patients see significant reductions or corrections after sending a formal dispute letter.",
+            },
+          ].map((item, i) => (
+            <details key={i} className="group bg-white border border-gray-100 rounded-xl overflow-hidden">
+              <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none text-gray-900 font-medium hover:bg-gray-50 transition-colors">
+                {item.q}
+                <ChevronRight className="h-4 w-4 text-gray-400 group-open:rotate-90 transition-transform shrink-0 ml-4" />
+              </summary>
+              <div className="px-6 pb-4 text-sm text-gray-500 leading-relaxed border-t border-gray-50 pt-3">
+                {item.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
       {/* ── FINAL CTA ──────────────────────────────────────────── */}
       <section className="bg-teal-700 py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
