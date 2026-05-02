@@ -15,7 +15,7 @@ Navigate to `/demo` — everything is pre-loaded. No typing required. Three real
 ## Setup (2 minutes)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/clearcare.git
+git clone https://github.com/anshuldani/clearcare.git
 cd clearcare
 npm install
 cp .env.local.example .env.local
